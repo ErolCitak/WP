@@ -1,0 +1,283 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": 1,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import pandas as pd"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 3,
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "df = pd.read_csv(\"dene.csv\", encoding='latin-1')"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 5,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/html": [
+       "<div>\n",
+       "<style scoped>\n",
+       "    .dataframe tbody tr th:only-of-type {\n",
+       "        vertical-align: middle;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe tbody tr th {\n",
+       "        vertical-align: top;\n",
+       "    }\n",
+       "\n",
+       "    .dataframe thead th {\n",
+       "        text-align: right;\n",
+       "    }\n",
+       "</style>\n",
+       "<table border=\"1\" class=\"dataframe\">\n",
+       "  <thead>\n",
+       "    <tr style=\"text-align: right;\">\n",
+       "      <th></th>\n",
+       "      <th>#AUTHID</th>\n",
+       "      <th>TEXT</th>\n",
+       "      <th>cEXT</th>\n",
+       "      <th>cNEU</th>\n",
+       "      <th>cAGR</th>\n",
+       "      <th>cCON</th>\n",
+       "      <th>cOPN</th>\n",
+       "    </tr>\n",
+       "  </thead>\n",
+       "  <tbody>\n",
+       "    <tr>\n",
+       "      <th>0</th>\n",
+       "      <td>1997_504851.txt</td>\n",
+       "      <td>Well, right now I just woke up from a mid-day ...</td>\n",
+       "      <td>n</td>\n",
+       "      <td>y</td>\n",
+       "      <td>y</td>\n",
+       "      <td>n</td>\n",
+       "      <td>y</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>1</th>\n",
+       "      <td>1997_605191.txt</td>\n",
+       "      <td>Well, here we go with the stream of consciousn...</td>\n",
+       "      <td>n</td>\n",
+       "      <td>n</td>\n",
+       "      <td>y</td>\n",
+       "      <td>n</td>\n",
+       "      <td>n</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>2</th>\n",
+       "      <td>1997_687252.txt</td>\n",
+       "      <td>An open keyboard and buttons to push. The thin...</td>\n",
+       "      <td>n</td>\n",
+       "      <td>y</td>\n",
+       "      <td>n</td>\n",
+       "      <td>y</td>\n",
+       "      <td>y</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>3</th>\n",
+       "      <td>1997_568848.txt</td>\n",
+       "      <td>I can't believe it!  It's really happening!  M...</td>\n",
+       "      <td>y</td>\n",
+       "      <td>n</td>\n",
+       "      <td>y</td>\n",
+       "      <td>y</td>\n",
+       "      <td>n</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>4</th>\n",
+       "      <td>1997_688160.txt</td>\n",
+       "      <td>Well, here I go with the good old stream of co...</td>\n",
+       "      <td>y</td>\n",
+       "      <td>n</td>\n",
+       "      <td>y</td>\n",
+       "      <td>n</td>\n",
+       "      <td>y</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>5</th>\n",
+       "      <td>1997_722902.txt</td>\n",
+       "      <td>Today. Had to turn the music down. Today I wen...</td>\n",
+       "      <td>y</td>\n",
+       "      <td>n</td>\n",
+       "      <td>y</td>\n",
+       "      <td>n</td>\n",
+       "      <td>y</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>6</th>\n",
+       "      <td>1997_724708.txt</td>\n",
+       "      <td>Stream of consciousness. What should I write a...</td>\n",
+       "      <td>n</td>\n",
+       "      <td>n</td>\n",
+       "      <td>y</td>\n",
+       "      <td>n</td>\n",
+       "      <td>n</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>7</th>\n",
+       "      <td>1997_724794.txt</td>\n",
+       "      <td>The RTF305 Usenet site is a piece of garbage! ...</td>\n",
+       "      <td>n</td>\n",
+       "      <td>n</td>\n",
+       "      <td>n</td>\n",
+       "      <td>y</td>\n",
+       "      <td>y</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>8</th>\n",
+       "      <td>1997_628043.txt</td>\n",
+       "      <td>I'm really unsure about this assignment becaus...</td>\n",
+       "      <td>y</td>\n",
+       "      <td>y</td>\n",
+       "      <td>n</td>\n",
+       "      <td>y</td>\n",
+       "      <td>y</td>\n",
+       "    </tr>\n",
+       "    <tr>\n",
+       "      <th>9</th>\n",
+       "      <td>1997_708036.txt</td>\n",
+       "      <td>Today was a tough day for me. I can't believed...</td>\n",
+       "      <td>y</td>\n",
+       "      <td>y</td>\n",
+       "      <td>y</td>\n",
+       "      <td>y</td>\n",
+       "      <td>n</td>\n",
+       "    </tr>\n",
+       "  </tbody>\n",
+       "</table>\n",
+       "</div>"
+      ],
+      "text/plain": [
+       "           #AUTHID                                               TEXT cEXT  \\\n",
+       "0  1997_504851.txt  Well, right now I just woke up from a mid-day ...    n   \n",
+       "1  1997_605191.txt  Well, here we go with the stream of consciousn...    n   \n",
+       "2  1997_687252.txt  An open keyboard and buttons to push. The thin...    n   \n",
+       "3  1997_568848.txt  I can't believe it!  It's really happening!  M...    y   \n",
+       "4  1997_688160.txt  Well, here I go with the good old stream of co...    y   \n",
+       "5  1997_722902.txt  Today. Had to turn the music down. Today I wen...    y   \n",
+       "6  1997_724708.txt  Stream of consciousness. What should I write a...    n   \n",
+       "7  1997_724794.txt  The RTF305 Usenet site is a piece of garbage! ...    n   \n",
+       "8  1997_628043.txt  I'm really unsure about this assignment becaus...    y   \n",
+       "9  1997_708036.txt  Today was a tough day for me. I can't believed...    y   \n",
+       "\n",
+       "  cNEU cAGR cCON cOPN  \n",
+       "0    y    y    n    y  \n",
+       "1    n    y    n    n  \n",
+       "2    y    n    y    y  \n",
+       "3    n    y    y    n  \n",
+       "4    n    y    n    y  \n",
+       "5    n    y    n    y  \n",
+       "6    n    y    n    n  \n",
+       "7    n    n    y    y  \n",
+       "8    y    n    y    y  \n",
+       "9    y    y    y    n  "
+      ]
+     },
+     "execution_count": 5,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "df.head(10)"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 6,
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "SyntaxError",
+     "evalue": "invalid syntax (<ipython-input-6-3a0fa5b5a00f>, line 1)",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[1;36m  File \u001b[1;32m\"<ipython-input-6-3a0fa5b5a00f>\"\u001b[1;36m, line \u001b[1;32m1\u001b[0m\n\u001b[1;33m    lenght of each document will be feature.\u001b[0m\n\u001b[1;37m            ^\u001b[0m\n\u001b[1;31mSyntaxError\u001b[0m\u001b[1;31m:\u001b[0m invalid syntax\n"
+     ]
+    }
+   ],
+   "source": [
+    "lenght of each document will be feature.\n",
+    "\n",
+    "uppertail and lowertail for each document w.r.t. length "
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 8,
+   "metadata": {},
+   "outputs": [
+    {
+     "data": {
+      "text/plain": [
+       "3249"
+      ]
+     },
+     "execution_count": 8,
+     "metadata": {},
+     "output_type": "execute_result"
+    }
+   ],
+   "source": [
+    "len(df.iloc[0]['TEXT'])"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": 9,
+   "metadata": {},
+   "outputs": [
+    {
+     "ename": "SyntaxError",
+     "evalue": "invalid syntax (<ipython-input-9-0faf871e6124>, line 1)",
+     "output_type": "error",
+     "traceback": [
+      "\u001b[1;36m  File \u001b[1;32m\"<ipython-input-9-0faf871e6124>\"\u001b[1;36m, line \u001b[1;32m1\u001b[0m\n\u001b[1;33m    Then cut some of text  then apply Bert\u001b[0m\n\u001b[1;37m           ^\u001b[0m\n\u001b[1;31mSyntaxError\u001b[0m\u001b[1;31m:\u001b[0m invalid syntax\n"
+     ]
+    }
+   ],
+   "source": [
+    "Then cut some of text  then apply Bert"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "metadata": {},
+   "outputs": [],
+   "source": []
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.7.6"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 4
+}
